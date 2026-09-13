@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>M2J — Groupe de rap</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #080808;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(8, 8, 8, 0.95);
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: Impact, "Arial Black", sans-serif;
+            font-size: 36px;
+            font-style: italic;
+            transform: rotate(-5deg);
+            text-shadow: 3px 3px 0 #e50914;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e50914;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+
+            background:
+                radial-gradient(circle at center,
+                #3a0000 0%,
+                #120000 30%,
+                #080808 70%);
+        }
+
+        .hero h1 {
+            font-family: Impact, "Arial Black", sans-serif;
+            font-size: 150px;
+            font-style: italic;
+            transform: rotate(-4deg);
+
+            text-shadow:
+                6px 6px 0 #e50914,
+                12px 12px 0 white;
+        }
+
+        .hero p {
+            margin-top: 30px;
+            font-size: 15px;
+            letter-spacing: 8px;
+            color: #ccc;
+        }
+
+        .buttons {
+            margin-top: 40px;
+        }
+
+        .buttons a,
+        .boutique a {
+            display: inline-block;
+            padding: 15px 25px;
+            margin: 7px;
+
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .buttons a:hover,
+        .boutique a:hover {
+            background: #e50914;
+            border-color: #e50914;
+        }
+
+        section {
+            padding: 100px 8%;
+        }
+
+        h2 {
+            font-family: Impact, "Arial Black", sans-serif;
+            font-size: 48px;
+            font-style: italic;
+            margin-bottom: 45px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .cards article {
+            background: #141414;
+            padding: 30px;
+            min-height: 180px;
+            border-left: 4px solid #e50914;
+        }
+
+        .cards h3 {
+            margin-bottom: 15px;
+        }
+
+        .cards p {
+            color: #999;
+            line-height: 1.6;
+        }
+
+        .members {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .member {
+    background: #111;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.member:hover {
+    transform: translateY(-5px);
+    border-color: #e50914;
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.35);
+}
+
+        .member span {
+            font-size: 50px;
+            font-weight: 900;
+            color: #e50914;
+        }
+
+        .member h3 {
+            margin-top: 15px;
+        }
+
+        .boutique {
+            text-align: center;
+            background: #101010;
+        }
+
+        .boutique p {
+            color: #999;
+            margin-bottom: 25px;
+        }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #222;
+        }
+
+        @media (max-width: 700px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 110px;
+            }
+
+            .hero p {
+                font-size: 12px;
+                letter-spacing: 5px;
+            }
+
+            section {
+                padding: 80px 6%;
+            }
+
+            h2 {
+                font-size: 40px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .members {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+   .member img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.member {
+    overflow: hidden;
+} .products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.product {
+    background: #111;
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    border-color: #e50914;
+    box-shadow: 0 0 20px rgba(229, 9, 14, 0.25);
+}
+
+.product img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.product h3 {
+    margin-bottom: 10px;
+}
+
+.price {
+    color: #e50914;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product button {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background: #e50914;
+    border-color: #e50914;
+}
+
+@media (max-width: 700px) {
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .product img {
+        height: 320px;
+    }
+}.socials {
+    text-align: center;
+    padding: 70px 20px;
+    background: #0a0a0a;
+}
+
+.socials h2 {
+    margin-bottom: 10px;
+}
+
+.socials p {
+    color: #aaa;
+    margin-bottom: 35px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    display: block;
+    min-width: 150px;
+    padding: 15px 25px;
+    border: 1px solid #333;
+    background: #111;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: #e50914;
+    border-color: #e50914;
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(229, 9, 14, 0.35);
+}.cards article a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 22px;
+    border: 1px solid #e50914;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cards article a:hover {
+    background: #e50914;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(229, 9, 14, 0.4);
+}
+
+.events {
+    background: #101010;
+}
+
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.event {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: #141414;
+    padding: 25px 30px;
+    border-left: 4px solid #e50914;
+}
+
+.event .date {
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: 32px;
+    font-style: italic;
+    color: #e50914;
+    min-width: 90px;
+}
+
+.event .details h3 {
+    margin-bottom: 8px;
+}
+
+.event .details p {
+    color: #999;
+}
+
+@media (max-width: 700px) {
+    .event {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+.spotify {
+    text-align: center;
+    background: #0a0a0a;
+}
+
+.spotify p {
+    color: #aaa;
+    margin-bottom: 35px;
+}
+
+.spotify-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.spotify-links a {
+    display: block;
+    min-width: 200px;
+    padding: 15px 25px;
+    border: 1px solid #1DB954;
+    background: #111;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.spotify-links a:hover {
+    background: #1DB954;
+    border-color: #1DB954;
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.35);
+}
+
+.clips {
+    background: #0a0a0a;
+}
+
+.clips h3.sub {
+    font-family: Impact, "Arial Black", sans-serif;
+    font-style: italic;
+    font-size: 22px;
+    color: #e50914;
+    margin: 40px 0 20px;
+    text-transform: uppercase;
+}
+
+.clips h3.sub:first-of-type {
+    margin-top: 0;
+}
+
+.clips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.clip-card {
+    display: block;
+    background: #141414;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.clip-card:hover {
+    border-color: #e50914;
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(229, 9, 14, 0.3);
+}
+
+@media (max-width: 700px) {
+    .clips-grid {
+        grid-template-columns: 1fr;
+    }
+}</style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">M2J</div>
+
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#actualites">Actualités</a>
+            <a href="#groupe">Le groupe</a>
+            <a href="#boutique">Boutique</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="accueil" class="hero">
+            <div>
+
+                <h1>M2J</h1>
+
+                <p>GROUPE DE RAP</p>
+
+                <div class="buttons">
+                    <a href="#groupe">DÉCOUVRIR LE GROUPE</a>
+                    <a href="#boutique">BOUTIQUE</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="actualites">
+
+            <h2>ACTUALITÉS</h2>
+
+            <div class="cards">
+
+                <article>
+    <h3>NOUVELLE SORTIE</h3>
+    <p>Découvrez les dernières sorties musicales de M2J.</p>
+    <a href="#">EN SAVOIR PLUS</a>
+</article>
+
+<article>
+    <h3>CLIP</h3>
+    <p>Retrouvez les nouveaux clips et vidéos du groupe.</p>
+    <a href="#clips">REGARDER</a>
+</article>
+
+<article>
+    <h3>ÉVÉNEMENT</h3>
+    <p>Les prochains événements et actualités de M2J.</p>
+    <a href="#evenements">DÉCOUVRIR</a>
+</article>
+
+            </div>
+
+        </section>
+
+        <section id="evenements" class="events">
+
+            <h2>ÉVÉNEMENTS</h2>
+
+            <div class="events-list">
+
+                <div class="event">
+                    <div class="date">À VENIR</div>
+                    <div class="details">
+                        <h3>PROCHAIN CONCERT</h3>
+                        <p>Détails et lieu à confirmer prochainement.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="groupe">
+
+            <h2>LE GROUPE</h2>
+
+            <div class="members">
+
+               <div class="member">
+    <img src="https://i.ibb.co/ZpF2HmLT/diglo-jpg.jpg" alt="Diglo">
+    <h3>DIGLO</h3>
+</div>
+
+                <div class="member">
+    <img src="https://i.ibb.co/7xrrYWrX/maligo-deter-jpg.jpg" alt="Maligo Deter">
+    <h3>MALIGO DETER</h3>
+</div>
+
+                <div class="member">
+    <img src="https://i.ibb.co/Fb1CmTfX/kdeux-jpg.jpg" alt="Kdeux">
+    <h3>KDEUX</h3>
+</div>
+
+                <div class="member">
+    <img src="https://i.ibb.co/qLNw2B3Z/blt-jpg.jpg" alt="BLT">
+    <h3>BLT</h3>
+</div>
+
+            </div>
+
+        </section>
+
+        <section id="clips" class="clips">
+
+            <h2>CLIPS</h2>
+
+            <h3 class="sub">Clips du groupe</h3>
+            <div class="clips-grid">
+                <a class="clip-card" href="https://youtu.be/YIv0OESL_0g" target="_blank">M2J - Maudit #1</a>
+                <a class="clip-card" href="https://youtu.be/Hnn28DPb33k" target="_blank">M2J - Maudit #2</a>
+                <a class="clip-card" href="https://youtu.be/wzlkvYs9zrU" target="_blank">M2J - Maudit #3</a>
+                <a class="clip-card" href="https://youtu.be/JFU-AkuWOBg" target="_blank">M2J - Dans le noir</a>
+            </div>
+
+            <h3 class="sub">Clips solo / feat</h3>
+            <div class="clips-grid">
+                <a class="clip-card" href="https://youtu.be/6NN-Y-oIGb0" target="_blank">Maligo Deter - Tout droit</a>
+                <a class="clip-card" href="https://youtu.be/yG2V94QjWDc" target="_blank">Maligo Deter feat M2.2.7G - Jumeau</a>
+            </div>
+
+        </section>
+
+        <section id="boutique" class="boutique">
+    <h2>BOUTIQUE M2J</h2>
+    <p>LES VÊTEMENTS OFFICIELS DU GROUPE</p>
+
+    <div class="products">
+
+        <div class="product">
+            <img src="https://i.ibb.co/bMJMBttx/28th-jpg.jpg" alt="T-shirt M2J 28th">
+            <h3>T-SHIRT 28TH</h3>
+            <p class="price">25 €</p>
+            <a href="https://wa.me/33628181378?text=Bonjour%20M2J%2C%20je%20souhaite%20commander%20le%20T-shirt%2028TH." target="_blank">
+    <button>COMMANDER</button>
+</a>
+        </div>
+
+        <div class="product">
+            <img src="https://i.ibb.co/Pvr9C4jM/jules-ferry-jpg.jpg" alt="T-shirt M2J Jules Ferry">
+            <h3>T-SHIRT JULES FERRY</h3>
+            <p class="price">25 €</p>
+            <a href="https://wa.me/33628181378?text=Bonjour%20M2J%2C%20je%20souhaite%20commander%20le%20T-shirt%20Jules%20Ferry." target="_blank">
+    <button>COMMANDER</button>
+</a>
+        </div>
+
+        <div class="product">
+            <img src="https://i.ibb.co/wFX8MQJQ/pull-jules-ferry-jpg.jpg" alt="Pull M2J Jules Ferry">
+            <h3>PULL JULES FERRY</h3>
+            <p class="price">35 €</p>
+            <a href="https://wa.me/33628181378?text=Bonjour%20M2J%2C%20je%20souhaite%20commander%20le%20pull%20Jules%20Ferry." target="_blank">
+    <button>COMMANDER</button>
+</a>
+        </div>
+
+    </div>
+</section>
+
+    </main>
+
+    <section id="spotify" class="spotify">
+        <h2>ÉCOUTEZ M2J</h2>
+        <p>RETROUVEZ NOS SONS SUR SPOTIFY</p>
+
+        <div class="spotify-links">
+            <a href="https://open.spotify.com/artist/1WiXarVwyPdjYfppjlBBfS" target="_blank">
+                M2J (GROUPE)
+            </a>
+            <a href="https://open.spotify.com/artist/5j7PWdmTv2Rq6skOuma0Cy" target="_blank">
+                MALIGO DETER
+            </a>
+            <a href="https://open.spotify.com/artist/2sF92geRJQvk8aWlGj881a" target="_blank">
+                KDEUX
+            </a>
+        </div>
+    </section>
+
+    <section class="socials">
+    <h2>SUIVEZ M2J</h2>
+    <p>RETROUVEZ-NOUS SUR LES RÉSEAUX</p>
+
+    <div class="social-links">
+        <a href="https://www.instagram.com/malfrats2juv?stkn=MWc3dmw1c2lvNzllZQ==" target="_blank">
+            INSTAGRAM
+        </a>
+
+        <a href="https://www.tiktok.com/@malfrats2juv?_r=1&_t=ZN-99hSYcCanf4" target="_blank">
+            TIKTOK
+        </a>
+
+        <a href="https://youtube.com/@malfrats2juv?si=VTjA9wjIi9Es27sb" target="_blank">
+            YOUTUBE
+        </a>
+    </div>
+</section>
+
+    <footer>
+        <p>© 2026 M2J — Tous droits réservés.</p>
+    </footer>
+
+</body>
+
+</html>
